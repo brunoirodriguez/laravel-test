@@ -1,10 +1,8 @@
-@extends('layouts.principal')
+<?php $__env->startSection('content'); ?>
 
-@section('content')
+<?php echo $__env->make('usuario.alerts.errors', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
-@include('usuario.alerts.errors')
-
-@include('usuario.alerts.request')
+<?php echo $__env->make('usuario.alerts.request', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 				<div class="header">
 			<div class="top-header">
@@ -22,17 +20,24 @@
 			</div>
 			<div class="header-info">
 				<h1>BIG HERO 6</h1>
-				{!!Form::open(['route'=>'log.store','method'=>'POST'])!!}
+				<?php echo Form::open(['route'=>'log.store','method'=>'POST']); ?>
+
 				<div class="form-group">
-					{!!Form::label('correo','Correo:')!!}
-					{!!Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu correo:'])!!}
+					<?php echo Form::label('correo','Correo:'); ?>
+
+					<?php echo Form::email('email',null,['class'=>'form-control','placeholder'=>'Ingresa tu correo:']); ?>
+
 				</div>
 				<div class="form-group">
-					{!!Form::label('contrasena','Contraseña:')!!}
-					{!!Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu contraseña:'])!!}
+					<?php echo Form::label('contrasena','Contraseña:'); ?>
+
+					<?php echo Form::password('password',['class'=>'form-control','placeholder'=>'Ingresa tu contraseña:']); ?>
+
 				</div>
-				{!!Form::submit('Iniciar',['class'=>'btn btn-primary'])!!}
-				{!!Form::close()!!}
+				<?php echo Form::submit('Iniciar',['class'=>'btn btn-primary']); ?>
+
+				<?php echo Form::close(); ?>
+
 			</div>
 			
 <!-- 			<div class="header-info">
@@ -61,4 +66,5 @@
 		</div>
 
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.principal', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

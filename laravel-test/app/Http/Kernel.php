@@ -48,5 +48,7 @@ class Kernel extends HttpKernel
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'guest' => \Cinema\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'commomHeadUserMethod' =>  \Cinema\Http\Middleware\commomHeadUserMethod::class,
+        'admin' => \Cinema\Http\Middleware\Admin::class,
     ];
 }

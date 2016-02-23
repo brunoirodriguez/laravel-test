@@ -3,19 +3,7 @@
 
 @section('content')
 
-
-
-
-@if(Session::has('message'))
-<div class="row col-sm-12">
-    <div class="alert alert-success fade in">
-    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
-  <span class="sr-only">Sucesso:</span>
-    <strong>Parabéns,</strong> {{Session::get('message')}}
-  </div>
-</div>      
-@endif
+@include('usuario.alerts.success')
 
     <table class="table">
         <thead>
@@ -31,6 +19,8 @@
         </tbody>
         @endforeach
     </table>
-
+	<div class="row text-center">
+        {!!$users->links()!!}
+    </div>
 
 @endsection

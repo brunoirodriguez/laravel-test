@@ -39,7 +39,7 @@
             <ul class="nav navbar-top-links navbar-right">
                  <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        {!!Auth::user()->name!!}<i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
+                        <?php echo Auth::user()->name; ?><i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Ajustes</a>
@@ -54,7 +54,7 @@
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
-                        @if(Auth::user()->id == 2)
+                        <?php if(Auth::user()->id == 2): ?>
                         <li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> Usuario<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -66,7 +66,7 @@
                                 </li>
                             </ul>
                         </li>
-                        @endif
+                        <?php endif; ?>
                         <li>
                             <a href="#"><i class="fa fa-film fa-fw"></i> Pelicula<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
@@ -98,7 +98,7 @@
      </nav>
 
         <div id="page-wrapper">
-            @yield('content')
+            <?php echo $__env->yieldContent('content'); ?>
         </div>
 
     </div>

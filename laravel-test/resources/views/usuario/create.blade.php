@@ -1,6 +1,10 @@
 
 @extends('layouts.admin')
 	@section('content')
+	
+	@include('usuario.alerts.request')
+	
+	
 	{!!Form::open(['route'=>'usuario.store', 'method'=>'POST'])!!}
         @include('usuario.forms.usr');
 	{!!Form::submit('Registrar',['class'=>'btn btn-primary'])!!}
